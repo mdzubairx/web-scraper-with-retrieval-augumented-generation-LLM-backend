@@ -17,7 +17,10 @@ const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
 const namespace = pc.index("dense-index", process.env.PINECONE_URL).namespace(process.env.PINECONE_NAMESPACE);
 
 
-app.use(cors());
+app.use(cors({
+  origin : ["http://localhost:5173/", "https://web-scraper-with-RAG.onrender.com/"],
+   methods: ['GET', 'POST', 'DELETE'],
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
