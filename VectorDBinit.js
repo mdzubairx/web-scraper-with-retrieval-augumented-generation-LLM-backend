@@ -1,8 +1,10 @@
+import dotenv from 'dotenv'
+dotenv.config();
 // Import the Pinecone library
 import { Pinecone } from '@pinecone-database/pinecone'
 
 // Initialize a Pinecone client with your API key
-const pc = new Pinecone({ apiKey: 'pcsk_2b7LVW_CdVk8jDXtZbrUCdoybfdj7YcqMfuLEVh3LGt52hxMpVx6svHTt4ZTZDDv3BXJ5H' });
+const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
 
 // Create a dense index with integrated embedding
 const indexName = 'dense-index';
@@ -19,7 +21,7 @@ await pc.createIndexForModel({
 
 
 // Target the index  (My note- this is actually creating a namespace )
-const index = pc.index("dense-index").namespace("My-First-NameSpace-For-RAG");
+const index = pc.index("dense-index").namespace(process.env.PINECONE_NAMESPACE);
 
 
 

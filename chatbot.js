@@ -1,6 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDE3fgzMMouMXZfUr9I3HtDZr21fH_szXc" });
+import dotenv from 'dotenv'
+dotenv.config();
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function ChatBotgetResult(query, retrievedtext) {
   const response = await ai.models.generateContent({

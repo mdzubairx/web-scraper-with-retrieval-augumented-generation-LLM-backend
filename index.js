@@ -7,13 +7,14 @@ import EmbeddandStoreData from './Embedd&Store.js';
 import SearchAndRetrieve from './searchAndRetreive.js';
 import ChatBotgetResult from './chatbot.js';
 import deleteVectorData from './deleteVector.js'
-
-import uniqid from "uniqid";
-import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+// import uniqid from "uniqid";
+import dotenv from 'dotenv'
+dotenv.config();
+// import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { Pinecone } from '@pinecone-database/pinecone'
 // Initialize a Pinecone client with your API key
-const pc = new Pinecone({ apiKey: 'pcsk_2b7LVW_CdVk8jDXtZbrUCdoybfdj7YcqMfuLEVh3LGt52hxMpVx6svHTt4ZTZDDv3BXJ5H' });
-const namespace = pc.index("dense-index", "https://dense-index-z336jvv.svc.aped-4627-b74a.pinecone.io").namespace("My-First-NameSpace-For-RAG");
+const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
+const namespace = pc.index("dense-index", process.env.PINECONE_URL).namespace(process.env.PINECONE_NAMESPACE);
 
 
 app.use(cors());

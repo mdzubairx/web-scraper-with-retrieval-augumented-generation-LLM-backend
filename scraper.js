@@ -1,7 +1,8 @@
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 import puppeteer from 'puppeteer';
-
+import dotenv from 'dotenv'
+dotenv.config();
 async function scrapeAllText(url) {
   const browser = await puppeteer.launch({
     headless: 'new', // use 'true' if you're not debugging
