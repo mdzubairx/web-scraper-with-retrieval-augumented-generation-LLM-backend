@@ -18,9 +18,10 @@ const namespace = pc.index("dense-index", process.env.PINECONE_URL).namespace(pr
 
 
 app.use(cors({
-  origin : ["http://localhost:5173", "https://web-scraper-with-RAG.onrender.com"],
+  origin : ["http://localhost:5173", "https://web-scraper-with-retrieval-augumented.onrender.com"],
    methods: ['GET', 'POST', 'DELETE'],
 }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
