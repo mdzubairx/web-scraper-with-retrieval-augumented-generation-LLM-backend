@@ -14,6 +14,7 @@
     "@langchain/core": "^0.3.45",
     "@langchain/textsplitters": "^0.1.0",
     "@pinecone-database/pinecone": "^5.1.1",
+    "@puppeteer/browsers": "^2.10.6",
     "axios": "^1.8.4",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
