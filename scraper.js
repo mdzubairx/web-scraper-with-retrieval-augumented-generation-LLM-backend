@@ -6,7 +6,6 @@ dotenv.config();
 
 async function scrapeAllText(url) {
   const browser = await puppeteer.launch({
-    executablePath: '/usr/bin/chromium',
     headless: 'new', // use 'true' if you're not debugging
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
