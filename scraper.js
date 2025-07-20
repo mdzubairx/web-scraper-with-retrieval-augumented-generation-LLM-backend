@@ -5,9 +5,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 async function scrapeAllText(url) {
-  const chromePath = '/tmp/puppeteer/chrome/linux-138.0.7204.157/chrome-linux64/chrome';
   const browser = await puppeteer.launch({
-    executablePath: chromePath,
+    executablePath: '/usr/bin/chromium',
     headless: 'new', // use 'true' if you're not debugging
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
