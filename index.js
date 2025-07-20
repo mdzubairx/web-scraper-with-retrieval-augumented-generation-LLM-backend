@@ -7,10 +7,8 @@ import EmbeddandStoreData from './Embedd&Store.js';
 import SearchAndRetrieve from './searchAndRetreive.js';
 import ChatBotgetResult from './chatbot.js';
 import deleteVectorData from './deleteVector.js'
-// import uniqid from "uniqid";
 import dotenv from 'dotenv'
 dotenv.config();
-// import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { Pinecone } from '@pinecone-database/pinecone'
 // Initialize a Pinecone client with your API key
 const pc = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
